@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './clock.css'
+
 function App() {
 let today = new Date()
 let dDay = new Date('2025-07-19')
+today.setHours(0, 0, 0, 0);    // 시간 0시로 맞추기
+dDay.setHours(0, 0, 0, 0); // 시간 0시로 맞추기
 let remain = dDay-today
-let remainDay = Math.ceil(remain / (1000 * 60 * 60 * 24));
+let remainDay = Math.floor(remain / (1000 * 60 * 60 * 24));
    // 시계 state
   const [clock, setClock] = useState('');
 
